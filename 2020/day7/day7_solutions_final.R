@@ -1,7 +1,8 @@
 #set path to working directory
 workDir <- 'C:/Users/smdevine/Desktop/GITprojects/advent_of_code_solutions/2020/day7'
 #read in bag rules
-rules <- readLines(con=file.path(workDir, 'input_p1.txt'))
+fname <- 'input_p1.txt'
+rules <- readLines(con=file.path(workDir, fname))
 rules_divided <- strsplit(rules, 'contain')
 main_colors <- unlist(lapply(1:length(rules_divided), function(i) rules_divided[[i]][1]))
 main_colors <- gsub(' bags ', '', main_colors)
