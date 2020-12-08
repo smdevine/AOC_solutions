@@ -34,8 +34,6 @@ while(code$run[i]==0) {
 code <- read.table(file.path(workDir, 'input_p1.txt'), stringsAsFactors = FALSE)
 colnames(code) <- c('op', 'arg')
 code$run <- 0
-sum(code$op=='jmp') #230
-sum(code$op=='nop') #65, tried these first
 nop_indices <- which(code$op=='nop')
 jmp_indices <- which(code$op=='jmp')
 
@@ -79,4 +77,4 @@ for (j in if(change_jmp){jmp_indices}else{nop_indices}) {
   }
   counter <- counter + 1
 }
-#answer is when the "error" occurs with print out of accumulator
+#part II answer is when the "error" occurs with print out of accumulator
