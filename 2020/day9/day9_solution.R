@@ -18,8 +18,8 @@ for (i in seq_along(code_chunks)) {
   test <- combn(code_chunks[[i]][1:25], 2, FUN = sum)
   results[i] <- code_chunks[[i]][26] %in% test
 }
-which(results==FALSE)
-invalid_number <- code_chunks[[561]][26] #167829540
+invalid_number <- code_chunks[[which(results==FALSE)]][26] 
+paste('Day 9 part I answer is', invalid_number) #167829540
 
 #part ii
 i <- 1
@@ -39,5 +39,5 @@ while(test_sum != invalid_number) {
   } else {next}
 }
 sum(result_p2) == invalid_number
-min(result_p2) + max(result_p2)
+paste('Day 9 part II answer is', min(result_p2) + max(result_p2))
 #28045630 answer
